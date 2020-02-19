@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y gcc-multilib upx \
 RUN cd /src && \
     git clone https://github.com/jprjr/snes_spc.git && \
     cd snes_spc && \
+    git checkout a7e3fb8d5eb0802d0f853556ac304a6edd8d6856 && \
     make AR=i686-w64-mingw32-ar CXX=i686-w64-mingw32-g++ PREFIX=/usr/i686-w64-mingw32 DYNLIB_EXT=.dll install && \
     make DYNLIB_EXT=.dll clean && \
     make AR=x86_64-w64-mingw32-ar CXX=x86_64-w64-mingw32-g++ PREFIX=/usr/x86_64-w64-mingw32 DYNLIB_EXT=.dll install && \
