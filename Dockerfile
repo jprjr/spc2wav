@@ -56,7 +56,7 @@ RUN cd /src/libid666 && \
 RUN \
     mkdir /dist && \
     cd /src/spc2wav && \
-    make LDFLAGS="-static" && \
+    make LDFLAGS="-s -static" && \
     cp -v spc2wav /dist/ && \
     make clean
 
