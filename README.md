@@ -9,6 +9,6 @@ this can be controlled via CLI with the `--amp` flag.
 The default amplification level is `512`, most players/decoders based on `snes_spc`
 default to `256`
 
-# LICENSE
+## LICENSE
 
 MIT
