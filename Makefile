@@ -19,6 +19,6 @@ clean:
 	rm -f spc2wav spc2wav.exe spc2wav.o
 
 release:
-	docker build -t snes_spc .
+	docker build --no-cache -t snes_spc .
 	mkdir -p output
 	docker run --rm -ti -v $(shell pwd)/output:/output snes_spc
