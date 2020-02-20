@@ -27,7 +27,7 @@ static uint8_t *slurp(char *filename, uint32_t *size);
 int usage(const char *self, int e) {
     fprintf(stderr,"Usage: %s --amp (amplitude) /path/to/file\n",self);
     fprintf(stderr,"  \"Accurate\" SNES amplitude = 256\n");
-    fprintf(stderr,"  Default = 512\n");
+    fprintf(stderr,"  Default = 384\n");
     return e;
 }
 
@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     buf = NULL;
     pac = NULL;
     romSize = 0;
-    amp = 0x200;
+    amp = 0x180;
     self = *argv++;
     argc--;
 
@@ -137,7 +137,7 @@ int main(int argc, char *argv[]) {
     spc_filter_set_gain(filter,amp);
 
     fprintf(stderr,"Decoding %s to %s\n",argv[0],outFile);
-    fprintf(stderr,"Applying gain: 0x%04x (%s)\n",amp, amp == 0x200 ? "default" : "custom");
+    fprintf(stderr,"Applying gain: 0x%04x (%s)\n",amp, amp == 0x180 ? "default" : "custom");
     fprintf(stderr,"Length: %s\n",frame_to_time(totalFrames));
     fprintf(stderr,"  Play length: %s\n",frame_to_time(((uint64_t)id6.play_len) / 2));
     fprintf(stderr,"  Fade length: %s\n",frame_to_time(fadeFrames));
